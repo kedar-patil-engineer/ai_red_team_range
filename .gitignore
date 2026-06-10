@@ -13,3 +13,8 @@ logs/*.jsonl
 # IDE
 .idea/
 .vscode/
+
+# Personal interview prep (keep local, do not publish)
+AI_Red_Team_Range_Guidebook.pdf
+build_guide_pdf.py
+
