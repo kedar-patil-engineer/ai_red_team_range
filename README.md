@@ -2,7 +2,7 @@
 
 [![AI Red Team Range](https://github.com/kedar-patil-engineer/ai_red_team_range/actions/workflows/redteam.yml/badge.svg)](https://github.com/kedar-patil-engineer/ai_red_team_range/actions/workflows/redteam.yml)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-lightgrey)
 ![OWASP LLM Top 10](https://img.shields.io/badge/OWASP-LLM%20Top%2010%20(2025)-orange)
 ![MITRE ATLAS](https://img.shields.io/badge/MITRE-ATLAS-red)
 
@@ -213,12 +213,11 @@ ai_red_team_range/
 
 ## Roadmap
 
-The engine, the agentic attacker, the REST service, the dashboard, and the Garak
-and PyRIT adapters all run today. Next:
+The engine, the agentic attacker, the REST service, the dashboard, the Garak and
+PyRIT adapters, and a GitHub Actions gate all run today. Next:
 
 1. **PDF report**: a shareable security assessment for a given model.
 2. **Expanded catalog**: more probes and goals across the full OWASP LLM Top 10.
-3. **GitHub Action**: a ready made workflow that runs the gate on pull requests.
 
 ---
 
@@ -227,3 +226,11 @@ and PyRIT adapters all run today. Next:
 **Kedar Patil**
 Information Security and AI Governance | Securing Agentic AI, LLMs, and Gen AI Systems
 Python | Zero Trust | Security Automation | OWASP LLM Top 10 | MITRE ATLAS
+
+---
+
+## License
+
+Copyright (c) 2026 Kedar Patil. All rights reserved. This repository is shared as
+a portfolio project for evaluation only; no reuse rights are granted. See
+[LICENSE](LICENSE).
