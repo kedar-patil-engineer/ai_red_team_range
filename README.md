@@ -82,6 +82,10 @@ pip install -r requirements.txt
 python cli.py --target mock
 ```
 
+**On Windows**, double click `run.bat` for a menu (scan, attack, dashboard, API,
+tests), or call a mode directly: `run.bat scan`, `run.bat attack`,
+`run.bat dashboard`.
+
 The `mock` target is a deliberately vulnerable model that runs offline at zero
 cost, so the full pipeline and scorecard work on any machine. Example output:
 
