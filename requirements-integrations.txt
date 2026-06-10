@@ -1,0 +1,12 @@
+# Optional external red team engines.
+#
+# These wrap industry standard tooling so the Range can orchestrate them as
+# extra probe sources. They often require Python 3.10 to 3.12, so install them
+# in a dedicated virtual environment, not your main 3.14 environment.
+#
+#   py -3.11 -m venv .venv-integrations
+#   .venv-integrations\Scripts\activate
+#   pip install -r requirements-integrations.txt
+#
+garak>=0.9.0
+pyrit>=0.4.0

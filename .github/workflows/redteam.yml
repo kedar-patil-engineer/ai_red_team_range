@@ -1,0 +1,39 @@
+name: AI Red Team Range
+
+# Runs the test suite, then proves the security gate by confirming it rejects a
+# deliberately weak model. This is the "shift left security for LLMs" gate in
+# action: a model that fails the resilience bar cannot pass CI.
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run test suite
+        run: python -m pytest tests/ -q
+
+      - name: Security gate must reject the weak mock model
+        run: |
+          if python cli.py --target mock --fail-under 80; then
+            echo "::error::Gate passed a weak model that should have been blocked."
+            exit 1
+          else
+            echo "Gate correctly blocked the weak mock model (resilience below 80)."
+          fi

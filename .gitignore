@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+.venv-integrations/
+.pytest_cache/
+
+# Scan output
+reports/out/*
+!reports/out/.gitkeep
+logs/*.jsonl
+
+# IDE
+.idea/
+.vscode/
