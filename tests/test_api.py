@@ -2,6 +2,7 @@
 """
 API tests using FastAPI's TestClient. Run offline against the mock target.
 """
+import pytest
 from fastapi.testclient import TestClient
 
 import api
@@ -12,6 +13,17 @@ client = TestClient(api.app)
 
 _PROBE_COUNT = len(load_probes())
 _GOAL_COUNT = len(load_goals())
+
+
+@pytest.fixture(autouse=True)
+def _dev_mode_auth(monkeypatch):
+    """
+    Neutralize any ambient RANGE_API_KEY (for example from a local .env) so the
+    default tests run in development mode without needing a header. Auth
+    enforcement is verified separately in test_auth_enforced_when_key_set.
+    """
+    monkeypatch.setenv("RANGE_API_KEY", "")
+    yield
 
 
 def test_health_is_public():
@@ -51,3 +63,15 @@ def test_unknown_goal_is_rejected():
 def test_catalog_endpoints():
     assert len(client.get("/probes").json()) == _PROBE_COUNT
     assert len(client.get("/goals").json()) == _GOAL_COUNT
+
+
+def test_auth_enforced_when_key_set(monkeypatch):
+    """When RANGE_API_KEY is set, protected endpoints require the header."""
+    monkeypatch.setenv("RANGE_API_KEY", "secret123")
+    # Missing key is rejected.
+    assert client.get("/probes").status_code == 401
+    # Correct key is accepted.
+    ok = client.get("/probes", headers={"X-API-Key": "secret123"})
+    assert ok.status_code == 200
+    # Health stays public regardless.
+    assert client.get("/health").status_code == 200
