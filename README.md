@@ -1,5 +1,11 @@
 # AI Red Team Range
 
+[![AI Red Team Range](https://github.com/kedar-patil-engineer/ai_red_team_range/actions/workflows/redteam.yml/badge.svg)](https://github.com/kedar-patil-engineer/ai_red_team_range/actions/workflows/redteam.yml)
+![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![OWASP LLM Top 10](https://img.shields.io/badge/OWASP-LLM%20Top%2010%20(2025)-orange)
+![MITRE ATLAS](https://img.shields.io/badge/MITRE-ATLAS-red)
+
 ### An agentic platform that attacks LLMs, scores how they break, and gates unsafe models before they ship.
 
 The Range fires a catalog of adversarial probes at any LLM endpoint, grades each
