@@ -6,7 +6,9 @@ rich>=13.7.0
 tabulate>=0.9.0
 
 # Targets
-openai>=1.40.0
+# 2.x is required for compatibility with modern httpx (older versions pass a
+# removed 'proxies' argument and crash on httpx >= 0.28).
+openai>=2.0.0
 
 # Reporting and serving
 reportlab>=4.0.0
