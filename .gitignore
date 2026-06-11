@@ -18,3 +18,9 @@ logs/*.jsonl
 AI_Red_Team_Range_Guidebook.pdf
 build_guide_pdf.py
 
+# Keep only the two polished showcase images in the repo. Any other local
+# screenshots (for example LinkedIn uploads) stay out of the repo.
+assets/*
+!assets/scorecard.png
+!assets/attack.png
+
