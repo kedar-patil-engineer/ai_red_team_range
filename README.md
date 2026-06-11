@@ -214,7 +214,7 @@ ai_red_team_range/
 │   ├── scoring.py            # Resilience Score + OWASP/ATLAS/severity rollups
 │   ├── eval_log.py           # append only JSONL run logging
 │   └── integrations/         # optional Garak / PyRIT adapters (lazy imports)
-├── tests/                    # 22 offline tests against the mock target
+├── tests/                    # 23 offline tests against the mock target
 ├── docs/
 │   └── INTEGRATIONS.md       # how to wire in Garak and PyRIT
 ├── cli.py                    # command line scanner, attacker, and CI gate
