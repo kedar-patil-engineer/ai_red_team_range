@@ -17,6 +17,17 @@ too easy to break.
 > Think of it as a penetration test for language models. Point it at a model,
 > watch the scorecard light up, and ship only what survives.
 
+## See it in action
+
+The resilience scorecard, mapped to the OWASP LLM Top 10 and MITRE ATLAS:
+
+![Resilience scorecard](assets/scorecard.png)
+
+The agentic attacker pursuing a goal over multiple turns. It escalates and, on
+turn three, extracts the target's hidden system prompt:
+
+![Agentic multi turn attack](assets/attack.png)
+
 ---
 
 ## Why this exists
